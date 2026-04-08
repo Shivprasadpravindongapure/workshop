@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import HomePage from './pages/HomePage/HomePage';
 import MyBookingsPage from './pages/MyBookingsPage/MyBookingsPage';
 import AboutPage from './pages/AboutPage/AboutPage';
+import Footer from './components/Footer/Footer';
 
 /**
  * App — root component.
@@ -27,10 +28,13 @@ function App() {
   };
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Navbar activePage={activePage} onNavigate={setActivePage} />
-      {renderPage()}
-    </>
+      <div className="flex-grow">
+        {renderPage()}
+      </div>
+      <Footer />
+    </div>
   );
 }
 
