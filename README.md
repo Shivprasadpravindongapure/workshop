@@ -52,12 +52,12 @@ The most challenging part was designing a UI that looks good while still being s
 ## Visual Showcase
 
 ### Before Redesign
-![Before 1](./frontend/public/before1.png)
-![Before 2](./frontend/public/before2.png)
-![Before 3](./frontend/public/before3.png)
-![Before 4](./frontend/public/before4.png)
+<img src="frontend/public/before1.png" width="48%" />
+<img src="frontend/public/before2.png" width="48%" />
+<img src="frontend/public/before3.png" width="48%" />
+<img src="frontend/public/before4.png" width="48%" />
 
 ### After Redesign
-![After 1](./frontend/public/after1.png)
-![After 2](./frontend/public/after2.png)
-![After 3](./frontend/public/after3.png)
+<img src="frontend/public/after1.png" width="48%" />
+<img src="frontend/public/after2.png" width="48%" />
+<img src="frontend/public/after3.png" width="48%" />
