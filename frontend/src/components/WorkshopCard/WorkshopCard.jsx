@@ -1,64 +1,41 @@
 import React from 'react';
-import Button from '../Button/Button';
-import './WorkshopCard.css';
 
-/**
- * WorkshopCard displays a single workshop's summary.
- *
- * Props:
- *  - workshop: { id, title, description, date, duration, seats, category, isFull }
- *  - onBook: function(workshop)
- */
 const WorkshopCard = ({ workshop, onBook }) => {
-  const {
-    id,
-    title,
-    description,
-    date,
-    duration,
-    seats,
-    category,
-    isFull,
-  } = workshop;
+  const { id, title, description, date, seats, isFull } = workshop;
 
   return (
-    <article className="workshop-card" id={`workshop-card-${id}`}>
-      <div className="workshop-card__header">
-        <span className="workshop-card__category">{category}</span>
-        {isFull && <span className="workshop-card__badge">Full</span>}
+    <div
+      id={`workshop-card-${id}`}
+      className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+    >
+      {/* Title */}
+      <h2 className="text-base font-semibold text-gray-800">{title}</h2>
+
+      {/* Description */}
+      <p className="mt-1 text-sm text-gray-500 leading-relaxed">{description}</p>
+
+      {/* Meta */}
+      <div className="mt-3 flex items-center gap-4 text-xs text-gray-400">
+        <span>📅 {date}</span>
+        <span>🪑 {isFull ? 'Full' : `${seats} seats`}</span>
       </div>
 
-      <h2 className="workshop-card__title">{title}</h2>
-      <p className="workshop-card__description">{description}</p>
-
-      <ul className="workshop-card__meta" aria-label="Workshop details">
-        <li className="workshop-card__meta-item">
-          <span className="meta-icon" aria-hidden="true">📅</span>
-          <span>{date}</span>
-        </li>
-        <li className="workshop-card__meta-item">
-          <span className="meta-icon" aria-hidden="true">⏱️</span>
-          <span>{duration}</span>
-        </li>
-        <li className="workshop-card__meta-item">
-          <span className="meta-icon" aria-hidden="true">🪑</span>
-          <span>{isFull ? 'No seats left' : `${seats} seats left`}</span>
-        </li>
-      </ul>
-
-      <div className="workshop-card__footer">
-        <Button
+      {/* Action */}
+      <div className="mt-4">
+        <button
           id={`book-btn-${id}`}
-          variant={isFull ? 'secondary' : 'primary'}
-          size="md"
-          fullWidth
+          onClick={() => !isFull && onBook(workshop)}
           disabled={isFull}
-          onClick={() => onBook(workshop)}
+          className={`w-full py-2 rounded text-sm font-medium transition-colors ${
+            isFull
+              ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+              : 'bg-blue-600 text-white hover:bg-blue-700'
+          }`}
         >
-          {isFull ? 'Join Waitlist' : 'Book Now'}
-        </Button>
+          {isFull ? 'Fully Booked' : 'Register'}
+        </button>
       </div>
-    </article>
+    </div>
   );
 };
 
