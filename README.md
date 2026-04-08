@@ -18,6 +18,7 @@ cd workshop_booking
 ```bash
 # In the project root:
 pip install -r requirements.txt
+python manage.py migrate
 python manage.py runserver
 ```
 
