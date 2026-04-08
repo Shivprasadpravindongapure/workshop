@@ -79,8 +79,10 @@ const BookingForm = ({ workshop, onSubmit, onCancel }) => {
                 className={`${inputStyles} ${errors.name ? errorStyles : ''}`}
                 value={form.name}
                 onChange={handleChange}
+                aria-invalid={errors.name ? 'true' : 'false'}
+                aria-describedby={errors.name ? 'error-name' : undefined}
               />
-              {errors.name && <p className="text-xs text-red-600 mt-1">{errors.name}</p>}
+              {errors.name && <p id="error-name" className="text-xs text-red-600 mt-1">{errors.name}</p>}
             </div>
 
             {/* Email */}
@@ -95,8 +97,10 @@ const BookingForm = ({ workshop, onSubmit, onCancel }) => {
                 className={`${inputStyles} ${errors.email ? errorStyles : ''}`}
                 value={form.email}
                 onChange={handleChange}
+                aria-invalid={errors.email ? 'true' : 'false'}
+                aria-describedby={errors.email ? 'error-email' : undefined}
               />
-              {errors.email && <p className="text-xs text-red-600 mt-1">{errors.email}</p>}
+              {errors.email && <p id="error-email" className="text-xs text-red-600 mt-1">{errors.email}</p>}
             </div>
 
             {/* Phone */}
@@ -111,8 +115,10 @@ const BookingForm = ({ workshop, onSubmit, onCancel }) => {
                 className={`${inputStyles} ${errors.phone ? errorStyles : ''}`}
                 value={form.phone}
                 onChange={handleChange}
+                aria-invalid={errors.phone ? 'true' : 'false'}
+                aria-describedby={errors.phone ? 'error-phone' : undefined}
               />
-              {errors.phone && <p className="text-xs text-red-600 mt-1">{errors.phone}</p>}
+              {errors.phone && <p id="error-phone" className="text-xs text-red-600 mt-1">{errors.phone}</p>}
             </div>
 
             {/* College */}
@@ -127,8 +133,10 @@ const BookingForm = ({ workshop, onSubmit, onCancel }) => {
                 className={`${inputStyles} ${errors.college ? errorStyles : ''}`}
                 value={form.college}
                 onChange={handleChange}
+                aria-invalid={errors.college ? 'true' : 'false'}
+                aria-describedby={errors.college ? 'error-college' : undefined}
               />
-              {errors.college && <p className="text-xs text-red-600 mt-1">{errors.college}</p>}
+              {errors.college && <p id="error-college" className="text-xs text-red-600 mt-1">{errors.college}</p>}
             </div>
 
           </div>

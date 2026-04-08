@@ -39,4 +39,4 @@ const WorkshopCard = ({ workshop, onBook }) => {
   );
 };
 
-export default WorkshopCard;
+export default React.memo(WorkshopCard);
