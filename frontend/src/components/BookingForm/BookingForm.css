@@ -1,0 +1,99 @@
+.booking-form-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 200;
+  padding: 0;
+}
+
+/* Slide-up bottom sheet on mobile */
+.booking-form {
+  background-color: var(--color-surface);
+  width: 100%;
+  max-width: var(--max-width);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-height: 92vh;
+  overflow-y: auto;
+}
+
+.booking-form__header {
+  margin-bottom: var(--spacing-md);
+}
+
+.booking-form__title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.booking-form__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* ===== FORM FIELDS ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-input {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.form-input:focus {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+}
+
+.form-input--error {
+  border-color: var(--color-danger);
+}
+
+.form-error {
+  font-size: var(--font-size-sm);
+  color: var(--color-danger);
+  margin-top: 2px;
+}
+
+.booking-form__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+/* On wider screens: centered card instead of full-width bottom sheet */
+@media (min-width: 600px) {
+  .booking-form-overlay {
+    align-items: center;
+    padding: var(--spacing-md);
+  }
+
+  .booking-form {
+    border-radius: var(--radius-lg);
+    max-height: 85vh;
+  }
+}
