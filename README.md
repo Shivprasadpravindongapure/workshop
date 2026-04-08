@@ -51,10 +51,13 @@ The most challenging part was designing a UI that looks good while still being s
 
 ## Visual Showcase
 
-> **Note to reviewer:** Please manually place your screenshots here before pushing to GitHub.
+### Before Redesign
+![Before 1](./frontend/public/before1.png)
+![Before 2](./frontend/public/before2.png)
+![Before 3](./frontend/public/before3.png)
+![Before 4](./frontend/public/before4.png)
 
-### Before
-![Before Redesign](./docs/screenshots/before.png)
-
-### After
-![After Redesign - Mobile & Desktop Maps](./docs/screenshots/after.png)
+### After Redesign
+![After 1](./frontend/public/after1.png)
+![After 2](./frontend/public/after2.png)
+![After 3](./frontend/public/after3.png)
