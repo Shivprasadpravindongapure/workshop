@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import './Navbar.css';
 
 const Navbar = ({ activePage, onNavigate }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Workshops' },
-    { id: 'my-bookings', label: 'My Bookings' },
-    { id: 'about', label: 'About' },
+    { id: 'home', label: 'Home' },
+    { id: 'my-bookings', label: 'Bookings' },
   ];
 
   const handleNav = (id) => {
@@ -16,26 +14,30 @@ const Navbar = ({ activePage, onNavigate }) => {
   };
 
   return (
-    <nav className="navbar" role="navigation" aria-label="Main navigation">
-      <div className="navbar__inner container">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+      <div className="max-w-2xl mx-auto px-4 h-14 flex items-center justify-between">
+
+        {/* Brand */}
         <button
           id="nav-brand"
-          className="navbar__brand"
           onClick={() => handleNav('home')}
-          aria-label="Go to home"
+          className="text-blue-600 font-semibold text-base"
         >
-          🎓 FOSSEE Workshops
+          Workshop Booking
         </button>
 
-        {/* Desktop nav */}
-        <ul className="navbar__links">
+        {/* Desktop links */}
+        <ul className="hidden sm:flex gap-1">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
                 id={`nav-${item.id}`}
-                className={`navbar__link ${activePage === item.id ? 'navbar__link--active' : ''}`}
                 onClick={() => handleNav(item.id)}
-                aria-current={activePage === item.id ? 'page' : undefined}
+                className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
+                  activePage === item.id
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'text-gray-500 hover:text-blue-600 hover:bg-blue-50'
+                }`}
               >
                 {item.label}
               </button>
@@ -46,27 +48,29 @@ const Navbar = ({ activePage, onNavigate }) => {
         {/* Mobile hamburger */}
         <button
           id="nav-menu-toggle"
-          className="navbar__hamburger"
           onClick={() => setMenuOpen((prev) => !prev)}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
+          className="sm:hidden flex flex-col gap-1.5 p-1"
           aria-label="Toggle menu"
         >
-          <span className="hamburger-line" />
-          <span className="hamburger-line" />
-          <span className="hamburger-line" />
+          <span className="block w-5 h-0.5 bg-gray-700 rounded" />
+          <span className="block w-5 h-0.5 bg-gray-700 rounded" />
+          <span className="block w-5 h-0.5 bg-gray-700 rounded" />
         </button>
       </div>
 
-      {/* Mobile dropdown */}
+      {/* Mobile menu */}
       {menuOpen && (
-        <div id="mobile-menu" className="navbar__mobile-menu">
+        <div id="mobile-menu" className="sm:hidden border-t border-gray-100 bg-white">
           {navItems.map((item) => (
             <button
               key={item.id}
               id={`mobile-nav-${item.id}`}
-              className={`navbar__mobile-link ${activePage === item.id ? 'navbar__mobile-link--active' : ''}`}
               onClick={() => handleNav(item.id)}
+              className={`block w-full text-left px-4 py-3 text-sm font-medium ${
+                activePage === item.id
+                  ? 'bg-blue-50 text-blue-600'
+                  : 'text-gray-600 hover:bg-gray-50'
+              }`}
             >
               {item.label}
             </button>
