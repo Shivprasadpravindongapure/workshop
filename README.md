@@ -51,13 +51,28 @@ The most challenging part was designing a UI that looks good while still being s
 
 ## Visual Showcase
 
-### Before Redesign
-<img src="frontend/public/before1.png" width="48%" />
-<img src="frontend/public/before2.png" width="48%" />
-<img src="frontend/public/before3.png" width="48%" />
-<img src="frontend/public/before4.png" width="48%" />
+A side-by-side comparison of the original FOSSEE Workshop Booking UI versus the redesigned React frontend.
 
-### After Redesign
-<img src="frontend/public/after1.png" width="48%" />
-<img src="frontend/public/after2.png" width="48%" />
-<img src="frontend/public/after3.png" width="48%" />
+---
+
+### 🔴 Before Redesign (Original Django UI)
+
+| | |
+|:---:|:---:|
+| <img src="frontend/public/before1.png" alt="Before - Home Page" width="100%" /> | <img src="frontend/public/before2.png" alt="Before - Workshop List" width="100%" /> |
+| *Home Page* | *Workshop List* |
+| <img src="frontend/public/before3.png" alt="Before - Workshop Details" width="100%" /> | <img src="frontend/public/before4.png" alt="Before - Registration Form" width="100%" /> |
+| *Workshop Details* | *Registration Form* |
+
+---
+
+### 🟢 After Redesign (Modern React UI)
+
+| | |
+|:---:|:---:|
+| <img src="frontend/public/after1.png" alt="After - Home Page" width="100%" /> | <img src="frontend/public/after2.png" alt="After - Workshop List" width="100%" /> |
+| *Home Page* | *Workshop List* |
+| <img src="frontend/public/after3.png" alt="After - Booking Form" width="100%" /> | |
+| *Booking Form* | |
+
+---

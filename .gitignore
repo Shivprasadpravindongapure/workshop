@@ -45,3 +45,7 @@ db.sqlite3
 #images/gif
 *.png
 *.gif
+
+# Allow README screenshots (before/after UI showcase)
+!frontend/public/before*.png
+!frontend/public/after*.png
