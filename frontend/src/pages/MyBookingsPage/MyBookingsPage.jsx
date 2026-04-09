@@ -1,26 +1,18 @@
 import React from 'react';
-import './MyBookingsPage.css';
 
-/**
- * MyBookingsPage — placeholder for displaying the user's confirmed bookings.
- * In a real app, this would fetch bookings from the Django backend.
- */
+// Placeholder page — will fetch bookings from Django API when integrated
 const MyBookingsPage = () => {
   return (
-    <main className="my-bookings-page page-content">
-      <div className="container">
-        <header className="my-bookings-page__header">
-          <h1 className="my-bookings-page__title">My Bookings</h1>
-          <p className="my-bookings-page__subtitle">
-            Your registered workshops will appear here.
-          </p>
-        </header>
+    <main className="max-w-2xl mx-auto px-4 pt-20 pb-10">
+      <div className="mb-6">
+        <h1 className="text-xl font-semibold text-gray-800">My Bookings</h1>
+        <p className="text-sm text-gray-400 mt-1">Your registered workshops will appear here.</p>
+      </div>
 
-        <div className="my-bookings-page__empty" role="status">
-          <span className="empty-icon" aria-hidden="true">📋</span>
-          <p>No bookings yet.</p>
-          <p className="empty-hint">Browse workshops and make your first booking!</p>
-        </div>
+      <div className="flex flex-col items-center py-16 text-center text-gray-400" role="status">
+        <span className="text-5xl mb-3" aria-hidden="true">📋</span>
+        <p className="text-sm">No bookings yet.</p>
+        <p className="text-xs mt-1">Browse workshops and make your first booking!</p>
       </div>
     </main>
   );
